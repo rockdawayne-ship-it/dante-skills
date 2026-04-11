@@ -1,0 +1,17 @@
+# 에이전트 컨텍스트 파일 (배포 제외)
+CLAUDE.md
+AGENTS.md
+AGENTS.override.md
+.claude/
+.codex/
+.agents/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+*.swo
