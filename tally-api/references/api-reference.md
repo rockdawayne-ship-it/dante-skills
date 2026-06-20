@@ -181,16 +181,21 @@ the OpenAPI spec requires it). Obtain the organization ID from `GET /users/me` /
 
 ## curl examples
 
+Keep the bearer token in a header **array variable** and reference it (`"${auth[@]}"`) — never inline the
+token on the same line as the request URL. (`scripts/tally.sh` uses this same pattern internally.)
+
 ```bash
+# Prepare auth once. Export TALLY_API_KEY first (see Authentication).
+auth=(-H "Authorization: Bearer ${TALLY_API_KEY}")
+
 # Whoami
-curl -sS https://api.tally.so/users/me -H "Authorization: Bearer $TALLY_API_KEY"
+curl -sS "${auth[@]}" https://api.tally.so/users/me
 
 # List completed submissions, 100 at a time
-curl -sS "https://api.tally.so/forms/$FORM_ID/submissions?filter=completed&limit=100" \
-  -H "Authorization: Bearer $TALLY_API_KEY"
+curl -sS "${auth[@]}" "https://api.tally.so/forms/${FORM_ID}/submissions?filter=completed&limit=100"
 
 # Create a webhook
-curl -sS -X POST https://api.tally.so/webhooks \
-  -H "Authorization: Bearer $TALLY_API_KEY" -H "Content-Type: application/json" \
+curl -sS -X POST "${auth[@]}" -H "Content-Type: application/json" \
+  https://api.tally.so/webhooks \
   -d '{"formId":"abc123","url":"https://example.com/hook","eventTypes":["FORM_RESPONSE"],"signingSecret":"whsec_..."}'
 ```
