@@ -62,7 +62,7 @@ skills add dandacompany/dante-skills -g -y --copy -a claude-code
 
 | 스킬                                                    | 설명                                                                                                                                                                              | 설치                                              |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| [gpt-model-effort-advisor](./gpt-model-effort-advisor/) | GPT-5.6 모델 티어(Luna/Terra/Sol)·추론 effort(Low~Ultra)를 과업에 맞게 추천하고, 실사용 성공/실패를 학습해 갱신하며, 실패를 진단(effort↑ vs 모델↑)하고 현재 세션 모델·effort를 실시간 판독. **codex 스킬**. | `cp -r gpt-model-effort-advisor ~/.codex/skills/` |
+| [gpt-model-effort-advisor](./gpt-model-effort-advisor/) | GPT-5.6 모델 티어(Luna/Terra/Sol)·추론 effort(Low~Ultra)를 과업에 맞게 추천하고, 실사용 성공/실패를 학습해 갱신하며, 실패를 진단(effort↑ vs 모델↑)하고 현재 세션 모델·effort를 실시간 판독. **codex 스킬**. | `skills add dandacompany/dante-skills@gpt-model-effort-advisor -a codex` |
 
 ### 🎓 Hermes 강의 실습용
 
@@ -122,11 +122,11 @@ GPT-5.6의 두 다이얼 — **모델 티어**(Luna/Terra/Sol, 지능 상한)와
 - **세션 상태** — 현재 세션의 모델·effort를 실시간 판독.
 
 ```bash
-# codex 스킬 — 폴더를 codex 스킬 경로에 복사
-cp -r gpt-model-effort-advisor ~/.codex/skills/
+# codex 스킬로 설치 (전역)
+skills add dandacompany/dante-skills@gpt-model-effort-advisor -g -y --copy -a codex
 ```
 
-레지스트리는 빈 상태로 시작해 사용자의 실제 결과로 채워진다.
+설치 후 codex 세션에서 "이 작업 어떤 모델로 할까?"처럼 물어보거나 작업을 시키면 자동으로 추천한다. 레지스트리는 빈 상태로 시작해 사용자의 실제 결과로 채워진다.
 
 ---
 

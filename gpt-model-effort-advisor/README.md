@@ -20,9 +20,11 @@ model per turn on its own.
 ## Install (codex)
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -r gpt-model-effort-advisor ~/.codex/skills/
+skills add dandacompany/dante-skills@gpt-model-effort-advisor -g -y --copy -a codex
 ```
+
+(Requires the [Skills CLI](https://skills.sh/): `npm i -g skills`. Installs to the
+codex skills directory.)
 
 The skill loads automatically when you ask which model/effort to use, report a
 bad result, or ask what model the session is running.
