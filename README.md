@@ -30,6 +30,7 @@ skills add dandacompany/dante-skills -g -y --copy -a claude-code
 | [magma-support](./magma-support/)                       | MAGMA 고객지원 1차 응대 지식(샘플). 고객 문의를 정책 기반으로 분류·1차 답변 초안 작성, 확실하지 않은 건 담당자 확인 필요로 표시. 웹훅 구독에서 로드해 외부 문의에 대응. 헤르메스 강의 4.1 웹훅 실습 사전 준비물.                                                                      | `hermes skills install dandacompany/dante-skills/magma-support` |
 | [iris-security-audit](./iris-security-audit/)           | MAGMA 4기둥 보안 감사(키·권한·스킬·격리) 체크리스트. Hermes 내장 진단(skills audit·security audit·doctor)을 순회하고 위험 삼각·Rule of Two로 판정해 "잘하는 것 / 조치 필요 / 신규 위험" 3부로 보고. 전부 읽기·안전 명령, 위험 설정은 보고만. 헤르메스 강의 4.3 보안 감사 자동화 실습 준비물.                | `hermes skills install dandacompany/dante-skills/iris-security-audit --category security` |
 | [tally-api](./tally-api/)                               | Tally.so 폼 플랫폼 REST API·웹훅 연동. 폼·제출(submission)·분석·워크스페이스·조직 사용자 조회 및 웹훅 생성/서명검증. curl CLI 래퍼(`tally.sh`) + HMAC-SHA256 서명 검증 스크립트 동봉. Tally 폼 데이터 추출·실시간 제출 처리에 사용.                                                   | `skills add dandacompany/dante-skills@tally-api`                |
+| [gpt-model-effort-advisor](./gpt-model-effort-advisor/)   | GPT-5.6 모델 티어(Luna/Terra/Sol)·추론 effort(Low~Ultra)를 과업에 맞게 추천하고, 실사용 성공/실패를 학습해 갱신하며, 실패를 진단(effort↑ vs 모델↑)하고 현재 세션 모델·effort를 실시간 판독. **codex 스킬**(추천·기록, 전환은 사람이). | `폴더를 ~/.codex/skills/ 에 복사` |
 
 ## Paperclip 회사 레벨 등록 (GitHub URL 한 줄)
 
