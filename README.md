@@ -51,6 +51,12 @@ skills add dandacompany/dante-skills -g -y --copy -a claude-code
 | [nextjs-tremor-report](./nextjs-tremor-report/) | 시장조사 보고서를 Next.js 15 + Tailwind + ECharts 인터랙티브 웹앱으로 빌드해 Vercel에 배포. 단테랩스 디자인 토큰·5페이지 표준 구조·ECharts 4종 패턴 강제.            | `skills add dandacompany/dante-skills@nextjs-tremor-report` |
 | [brand-logo](./brand-logo/)                     | 브랜드 로고 컨셉 디렉팅 패턴. 브리프 → 심볼 컨셉 → 이미지 프롬프트 → 생성 → 벡터화 인계. 모델 글자 약점 회피(추상·모노그램 우선), 브랜드 토큰 고정, 평가 체크리스트. | `skills add dandacompany/dante-skills@brand-logo`           |
 
+### ✍️ 글쓰기 · 윤문
+
+| 스킬                                  | 설명                                                                                                                                                                                                                                     | 설치                                                   |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| [humanize-korean](./humanize-korean/) | AI가 쓴 한글 글의 "AI 티"(번역투·기계적 병렬·관용구·피동 남용 등 10대 카테고리 40+ 패턴)를 탐지해 내용은 그대로 두고 문체·리듬만 자연스럽게 윤문. [epoko77-ai/im-not-ai](https://github.com/epoko77-ai/im-not-ai) fast-path 에디션(MIT). | `skills add dandacompany/dante-skills@humanize-korean` |
+
 ### 🔌 데이터 수집 · API 연동
 
 | 스킬                                    | 설명                                                                                                                                                           | 설치                                                    |
@@ -60,8 +66,8 @@ skills add dandacompany/dante-skills -g -y --copy -a claude-code
 
 ### ⚙️ 에이전트 운영 · 모델 최적화
 
-| 스킬                                                    | 설명                                                                                                                                                                              | 설치                                              |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| 스킬                                                    | 설명                                                                                                                                                                                                        | 설치                                                                     |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [gpt-model-effort-advisor](./gpt-model-effort-advisor/) | GPT-5.6 모델 티어(Luna/Terra/Sol)·추론 effort(Low~Ultra)를 과업에 맞게 추천하고, 실사용 성공/실패를 학습해 갱신하며, 실패를 진단(effort↑ vs 모델↑)하고 현재 세션 모델·effort를 실시간 판독. **codex 스킬**. | `skills add dandacompany/dante-skills@gpt-model-effort-advisor -a codex` |
 
 ### 🎓 Hermes 강의 실습용
@@ -99,6 +105,19 @@ skills add dandacompany/dante-skills@dream -g -y --copy -a claude-code
 
 ```bash
 skills add dandacompany/dante-skills@price-positioning -g -y --copy -a claude-code
+```
+
+### ✍️ humanize-korean
+
+AI(ChatGPT·Claude·Gemini)가 쓴 한글 텍스트를 사람이 쓴 글처럼 되돌리는 윤문 스킬. 단일 호출 안에서 탐지 → 윤문 → 자체검증까지 끝내는 **독립형 fast-path 에디션**입니다.
+
+- 4대 철칙: 의미 불변 · 근거 기반 · 장르 유지 · 과윤문 금지(변경률 50% 초과 시 롤백)
+- 룰북: 10대 카테고리 × 40+ AI 티 패턴 분류 체계(`references/ai-tell-taxonomy.md`) + 카테고리별 치환 레시피
+- 산출물: `_workspace/{run_id}/final.md` + 변경률·등급(A~D)·자체검증 리포트
+- 원본: [epoko77-ai/im-not-ai](https://github.com/epoko77-ai/im-not-ai) (MIT) — 정밀 3콜 파이프라인이 필요하면 원본 플러그인 설치 권장. fork: [dandacompany/im-not-ai](https://github.com/dandacompany/im-not-ai)
+
+```bash
+skills add dandacompany/dante-skills@humanize-korean -g -y --copy -a claude-code
 ```
 
 ### 📚 oh-my-wiki
